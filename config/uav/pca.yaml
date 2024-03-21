@@ -1,0 +1,53 @@
+work_dir: ./work_dir/uav/pca
+weights: ./work_dir/uav/ctrgcn_joint/runs-38-4940.pt
+
+# feeder
+feeder: feeders.feeder_uav.Feeder
+train_feeder_args:
+  data_path: /mnt/netdisk/Datasets/089-UAV-Human-v2/v1/train_data.npy
+  label_path: /mnt/netdisk/Datasets/089-UAV-Human-v2/v1/train_label.pkl
+  debug: False
+  random_choose: False
+  random_shift: False
+  random_move: False
+  window_size: 120
+  normalization: True
+  random_rot: False
+  p_interval: [0.95]
+  vel: False
+  bone: False
+
+test_feeder_args:
+  data_path: /mnt/netdisk/Datasets/089-UAV-Human-v2/v1/test_data.npy
+  label_path: /mnt/netdisk/Datasets/089-UAV-Human-v2/v1/test_label.pkl
+  window_size: 120
+  p_interval: [0.95]
+  vel: False
+  bone: False
+  debug: False
+  normalization: True
+
+# model
+model: model.ctrgcn.Model
+model_args:
+  num_class: 155
+  num_point: 17
+  num_person: 2
+  graph: graph.uav_human.Graph
+  graph_args:
+    labeling_mode: 'spatial'
+
+#optim
+weight_decay: 0.0004
+base_lr: 0.1
+min_lr: 0.0001
+lr_decay_rate: 0.1
+step: [35, 55]
+warm_up_epoch: 0
+
+# training
+device: [0,1]
+batch_size: 512
+test_batch_size: 512
+num_epoch: 1
+nesterov: True
