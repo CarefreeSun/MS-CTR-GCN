@@ -1,9 +1,20 @@
 # Multi-Stream CTR-GCN
 This repo is the implementation of our method for [2024 ICME Grand Chanllenge Multi-Modal Video Reasoning and Analyzing Competition, Track #10: Skeleton-based Action Recognition(UAV-Human dataset)](https://sutdcv.github.io/MMVRAC/). 
 
-# Details
-The repo is being organized and we will soon release detailed instructions on usage.
+## Train the model
+We provide scripts for you to train the model conveniently.
+```bash
+$ sh train_uav_joint.sh
+$ sh train_uav_bone.sh
+$ sh train_uav_motion.sh
+```
 
+## Multi-stream ensemble
+We provide the best scores in the [./weights](./weights/) directory. You can get the accuracy with the command below:
+```bash
+$ sh ensemble.sh
+```
+Moreover, your own weights would be stored in the ./workdir directory. You can test your results by modifying the [ensemble.sh](ensemble.sh) file.
 
 ## Acknowledgements
 
