@@ -5,7 +5,7 @@ The results are listed below:
 
 | Split | Acc(%) |
 | :---: | :----: |
-|  v1   | 49.05  |
+|  v1   | 49.06  |
 |  v2   | 75.61  |
 
 ## Train the model
@@ -15,7 +15,11 @@ $ sh train_uav_joint.sh
 $ sh train_uav_bone.sh
 $ sh train_uav_motion.sh
 ```
-To utilize the long-tail loss, please refer to the code in [main_logit_adjust.py](main_logit_adjust.py).
+To utilize the long-tail loss, please use the commands below:
+```bash
+$ sh train_uav_longtail.sh
+```
+You can use different modalities by modifying [longtail.yaml](./config/uav/longtail.yaml).
 
 ## Multi-stream ensemble
 We provide the best scores and their corresponding weights in the [./weights](./weights/) directory. You can get the accuracies with the commands below:

@@ -15,7 +15,7 @@ from sklearn.metrics import confusion_matrix
 import csv
 import numpy as np
 import glob
-from skelemix import *
+# from skelemix import *
 # torch
 import torch
 import torch.backends.cudnn as cudnn
@@ -27,7 +27,7 @@ from tqdm import tqdm
 
 import torch.nn.functional as F
 #from torchlight.torchlight import DictAction
-from cb_loss import *
+# from cb_loss import *
 
 import resource
 rlimit = resource.getrlimit(resource.RLIMIT_NOFILE)
