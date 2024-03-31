@@ -82,38 +82,32 @@ if __name__ == "__main__":
     right_num = total_num = right_num_5 = 0
     best = 0.0
     if arg.joint_motion_dir is not None and arg.bone_motion_dir is not None:
-        for a1 in [0.6]:
-            for a2 in [0.6]:
-                for a3 in [0.6]:
-                    for a4 in [0.6]:
-                        for a5 in [0.6]:
-                            for a6 in [0.6]:
-                                total_num = 0
-                                right_num = 0
-                                arg.alpha = [a4,a5,a6,0.8,0.6,0.8]#0.8,0.6,0.8]
-                                #arg.alpha = [a4,a4,a4,a5,a5,a5]
-                                for i in tqdm(range(len(label))):
-                                    l = label[i]
-                                    _, r11 = r1[i]
-                                    _, r22 = r2[i]
-                                    _, r33 = r3[i]
-                                    _, r44 = r4[i]
-                                    _, r55 = r5[i]
-                                    _, r66 = r6[i]
+        total_num = 0
+        right_num = 0
+        arg.alpha = [0.6,0.6,0.6,0.8,0.6,0.8]
+        #arg.alpha = [a4,a4,a4,a5,a5,a5]
+        for i in tqdm(range(len(label))):
+            l = label[i]
+            _, r11 = r1[i]
+            _, r22 = r2[i]
+            _, r33 = r3[i]
+            _, r44 = r4[i]
+            _, r55 = r5[i]
+            _, r66 = r6[i]
 
-                                    r = r11 * arg.alpha[0] + r22 * arg.alpha[1] + r33 * arg.alpha[2] + r44 * arg.alpha[3] + r55 * arg.alpha[4] + r66 * arg.alpha[5]
-                                    rank_5 = r.argsort()[-5:]
-                                    right_num_5 += int(int(l) in rank_5)
-                                    r = np.argmax(r)
-                                    right_num += int(r == int(l))
-                                    total_num += 1
-                                acc = right_num / total_num
-                                print(acc, arg.alpha)
-                                if acc>best:
-                                    best = acc
-                                    best_alpha = arg.alpha
-                                acc5 = right_num_5 / total_num
-                print(best, best_alpha)
+            r = r11 * arg.alpha[0] + r22 * arg.alpha[1] + r33 * arg.alpha[2] + r44 * arg.alpha[3] + r55 * arg.alpha[4] + r66 * arg.alpha[5]
+            rank_5 = r.argsort()[-5:]
+            right_num_5 += int(int(l) in rank_5)
+            r = np.argmax(r)
+            right_num += int(r == int(l))
+            total_num += 1
+        acc = right_num / total_num
+        print(acc, arg.alpha)
+        if acc>best:
+            best = acc
+            best_alpha = arg.alpha
+        acc5 = right_num_5 / total_num
+    print(best, best_alpha)
 
     print('Top1 Acc: {:.4f}%'.format(acc * 100))
     print('Top5 Acc: {:.4f}%'.format(acc5 * 100))

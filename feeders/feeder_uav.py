@@ -94,8 +94,8 @@ class Feeder(torch.utils.data.Dataset):
             data_numpy = (data_numpy - mean) / ((var + 1e-6) ** 0.5)
         if self.random_rot:
             data_numpy = tools.random_rot(data_numpy)
-            data_numpy = tools.shear(data_numpy)
-            data_numpy = tools.gaus_noise(data_numpy)
+            # data_numpy = tools.shear(data_numpy)
+            # data_numpy = tools.gaus_noise(data_numpy)
         
         label = self.label[index]
         if self.bone:

@@ -1,9 +1,9 @@
-work_dir: ./work_dir/uav/ctrgcn_joint_aug_05
+work_dir: ./work_dir/uav/ctrgcn_joint_v2
 # feeder
-feeder: feeders.feeder_uav_strong_noise.Feeder
+feeder: feeders.feeder_uav.Feeder
 train_feeder_args:
-  data_path: /mnt/netdisk/Datasets/089-UAV-Human-v2/v1/train_data.npy
-  label_path: /mnt/netdisk/Datasets/089-UAV-Human-v2/v1/train_label.pkl
+  data_path: /mnt/netdisk/Datasets/089-UAV-Human-v2/train_data.npy
+  label_path: /mnt/netdisk/Datasets/089-UAV-Human-v2/train_label.pkl
   debug: False
   random_choose: False
   random_shift: False
@@ -16,8 +16,8 @@ train_feeder_args:
   bone: False
 
 test_feeder_args:
-  data_path: /mnt/netdisk/Datasets/089-UAV-Human-v2/v1/test_data.npy
-  label_path: /mnt/netdisk/Datasets/089-UAV-Human-v2/v1/test_label.pkl
+  data_path: /mnt/netdisk/Datasets/089-UAV-Human-v2/test_data.npy
+  label_path: /mnt/netdisk/Datasets/089-UAV-Human-v2/test_label.pkl
   window_size: 120
   p_interval: [0.95]
   vel: False
