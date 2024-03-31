@@ -23,7 +23,7 @@ We provide the best scores and their corresponding weights in the [./weights](./
 $ sh ensemble_v1.sh
 $ sh ensemble_v2.sh
 ```
-Moreover, your own weights and scores would be stored in the ./workdir directory. You could test your results by modifying the [ensemble.sh](ensemble.sh) file.
+Moreover, your own weights and scores would be stored in the ./workdir directory. You could test your results by modifying the [ensemble_v1.sh](ensemble_v1.sh) and [ensemble_v2.sh](ensemble_v2.sh).
 
 ## Acknowledgements
 
