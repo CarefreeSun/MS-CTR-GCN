@@ -52,10 +52,10 @@ if __name__ == "__main__":
     elif 'uav' in arg.dataset:
         if 'v1' in arg.dataset:
             #npz_data = np.load('/mnt/netdisk/wulh/MAMP-main/data/ntu/NTU60_XSub.npz')
-            with open('/mnt/netdisk/Datasets/089-UAV-Human-v2/v1/test_label.pkl', 'rb') as f:
+            with open('./data/uav/v1/test_label.pkl', 'rb') as f:
                 _, label = pickle.load(f)
         elif 'v2' in arg.dataset:
-            with open('/mnt/netdisk/Datasets/089-UAV-Human-v2/test_label.pkl', 'rb') as f:
+            with open('./data/uav/v2/test_label.pkl', 'rb') as f:
                 _, label = pickle.load(f)
     else:
         raise NotImplementedError

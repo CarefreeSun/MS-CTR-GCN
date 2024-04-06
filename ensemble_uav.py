@@ -52,10 +52,10 @@ if __name__ == "__main__":
     elif 'uav' in arg.dataset:
         if 'v1' in arg.dataset:
             #npz_data = np.load('/mnt/netdisk/wulh/MAMP-main/data/ntu/NTU60_XSub.npz')
-            with open('/mnt/netdisk/Datasets/089-UAV-Human-v2/v1/test_label.pkl', 'rb') as f:
+            with open('./data/uav/v1/test_label.pkl', 'rb') as f:
                 _, label = pickle.load(f)
         elif 'v2' in arg.dataset:
-            with open('/mnt/netdisk/Datasets/089-UAV-Human-v2/test_label.pkl', 'rb') as f:
+            with open('./data/uav/v2/test_label.pkl', 'rb') as f:
                 _, label = pickle.load(f)
     else:
         raise NotImplementedError
@@ -85,6 +85,7 @@ if __name__ == "__main__":
         total_num = 0
         right_num = 0
         arg.alpha = [0.6,0.6,0.6,0.8,0.6,0.8]
+        # arg.alpha = [0.6,0.6,0.6,0.8,0.6,0.8]
         #arg.alpha = [a4,a4,a4,a5,a5,a5]
         for i in tqdm(range(len(label))):
             l = label[i]
