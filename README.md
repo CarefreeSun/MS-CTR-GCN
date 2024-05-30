@@ -1,5 +1,5 @@
 # Multi-Stream CTR-GCN
-This repo is the implementation of our method for [2024 ICME Grand Chanllenge Multi-Modal Video Reasoning and Analyzing Competition](https://sutdcv.github.io/MMVRAC/), Track #10: Skeleton-based Action Recognition(UAV-Human dataset). 
+This repo is the implementation of our method for [2024 ICME Grand Chanllenge Multi-Modal Video Reasoning and Analyzing Competition (MMVRAC)](https://sutdcv.github.io/MMVRAC/), Track #10: Skeleton-based Action Recognition (UAV-Human dataset). Our work is among the top solutions.
 
 The results are listed below:
 
